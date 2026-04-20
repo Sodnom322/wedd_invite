@@ -718,3 +718,99 @@ a { text-decoration: none; color: inherit; }
   from { transform: scale(1);   opacity: 1;   }
   to   { transform: scale(1.3); opacity: 0.7; }
 }
+
+/* =============================================
+   SPLASH SCREEN
+   ============================================= */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(160deg, #2a1a1a 0%, #3d1f1f 40%, #1a0f0f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.9s ease, visibility 0.9s ease;
+}
+.splash.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.splash__content {
+  text-align: center;
+  color: #fdf6f0;
+  padding: 2rem;
+  animation: splash-fade-in 1.2s ease forwards;
+}
+@keyframes splash-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.splash__pre {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+.splash__names {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2.8rem, 10vw, 5.5rem);
+  line-height: 1.1;
+  color: #fdf6f0;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+.splash__amp {
+  color: #c9a96e;
+  font-style: normal;
+  margin: 0 0.2em;
+}
+.splash__date {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #d4a5a5;
+  margin-bottom: 3rem;
+  opacity: 0.85;
+}
+.splash__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  border: 1px solid #c9a96e88;
+  color: #fdf6f0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
+  animation: splash-btn-pulse 2.5s ease-in-out infinite;
+}
+.splash__btn:hover {
+  background: rgba(201, 169, 110, 0.15);
+  border-color: #c9a96e;
+  transform: scale(1.04);
+  animation: none;
+}
+.splash__btn svg {
+  width: 16px;
+  height: 16px;
+}
+@keyframes splash-btn-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,110,0); }
+  50%       { box-shadow: 0 0 0 8px rgba(201,169,110,0.15); }
+}

@@ -236,14 +236,13 @@
     if (playing) { stopMusic(); } else { startMusic(); }
   });
 
-  // Try to autoplay immediately (works if browser allows it)
-  startMusic();
+  /* ------------------------------------------
+     SPLASH SCREEN
+  ------------------------------------------ */
+  const splash    = document.getElementById('splash');
+  const splashBtn = document.getElementById('splash-btn');
 
-  // Fallback: start on first any interaction if autoplay was blocked
-  function autoStart() {
-    if (!playing) startMusic();
-  }
-  document.addEventListener('touchstart', autoStart, { once: true });
-  document.addEventListener('scroll',     autoStart, { once: true, passive: true });
-  document.addEventListener('click',      autoStart, { once: true });
-  document.addEventListener('keydown',    autoStart, { once: true });
+  splashBtn.addEventListener('click', () => {
+    splash.classList.add('hide');
+    startMusic();
+  });
