@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Александр & Мария · 14 июня 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <ul class="nav__list">
+      <li><a href="#story" class="nav__link">История</a></li>
+      <li><a href="#details" class="nav__link">Детали</a></li>
+      <li><a href="#schedule" class="nav__link">Программа</a></li>
+      <li><a href="#gallery" class="nav__link">Галерея</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero__petals" id="petalsCanvas"></canvas>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__pre">Приглашаем вас разделить с нами</p>
+      <h1 class="hero__names">Александр<span class="hero__amp">&amp;</span>Мария</h1>
+      <p class="hero__date">14 июня 2025</p>
+      <div class="hero__divider">
+        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg" class="divider-svg">
+          <line x1="0" y1="10" x2="80" y2="10" stroke="#c9a96e" stroke-width="0.5"/>
+          <circle cx="100" cy="10" r="3" fill="none" stroke="#c9a96e" stroke-width="0.5"/>
+          <circle cx="93" cy="10" r="1.5" fill="#c9a96e"/>
+          <circle cx="107" cy="10" r="1.5" fill="#c9a96e"/>
+          <line x1="120" y1="10" x2="200" y2="10" stroke="#c9a96e" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="countdown" id="countdown">
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-days">00</span>
+          <span class="countdown__label">дней</span>
+        </div>
+        <div class="countdown__sep">·</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-hours">00</span>
+          <span class="countdown__label">часов</span>
+        </div>
+        <div class="countdown__sep">·</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-mins">00</span>
+          <span class="countdown__label">минут</span>
+        </div>
+        <div class="countdown__sep">·</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-secs">00</span>
+          <span class="countdown__label">секунд</span>
+        </div>
+      </div>
+      <p class="countdown__past" id="countdown-past" style="display:none;">Этот день уже настал 💛</p>
+    </div>
+    <div class="hero__scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="section story fade-in" id="story">
+    <div class="container">
+      <div class="section__header">
+        <div class="floral-divider" aria-hidden="true">
+          <svg viewBox="0 0 340 40" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="20" x2="120" y2="20" stroke="#d4a5a5" stroke-width="0.6"/>
+            <!-- left flower -->
+            <g transform="translate(130,20)">
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(0)"/>
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(60)"/>
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(120)"/>
+              <circle r="3" fill="#c9a96e"/>
+            </g>
+            <!-- center motif -->
+            <g transform="translate(170,20)">
+              <ellipse rx="5" ry="9" fill="#fce8e8" stroke="#d4a5a5" stroke-width="0.6" transform="rotate(0)"/>
+              <ellipse rx="5" ry="9" fill="#fce8e8" stroke="#d4a5a5" stroke-width="0.6" transform="rotate(45)"/>
+              <ellipse rx="5" ry="9" fill="#fce8e8" stroke="#d4a5a5" stroke-width="0.6" transform="rotate(90)"/>
+              <ellipse rx="5" ry="9" fill="#fce8e8" stroke="#d4a5a5" stroke-width="0.6" transform="rotate(135)"/>
+              <circle r="4" fill="#c9a96e"/>
+            </g>
+            <!-- right flower -->
+            <g transform="translate(210,20)">
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(0)"/>
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(60)"/>
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(120)"/>
+              <circle r="3" fill="#c9a96e"/>
+            </g>
+            <line x1="220" y1="20" x2="340" y2="20" stroke="#d4a5a5" stroke-width="0.6"/>
+          </svg>
+        </div>
+        <h2 class="section__title">Наша история</h2>
+        <div class="floral-divider floral-divider--flip" aria-hidden="true">
+          <svg viewBox="0 0 340 40" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="20" x2="120" y2="20" stroke="#d4a5a5" stroke-width="0.6"/>
+            <g transform="translate(130,20)">
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(0)"/>
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(60)"/>
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(120)"/>
+              <circle r="3" fill="#c9a96e"/>
+            </g>
+            <g transform="translate(170,20)">
+              <ellipse rx="5" ry="9" fill="#fce8e8" stroke="#d4a5a5" stroke-width="0.6" transform="rotate(0)"/>
+              <ellipse rx="5" ry="9" fill="#fce8e8" stroke="#d4a5a5" stroke-width="0.6" transform="rotate(45)"/>
+              <ellipse rx="5" ry="9" fill="#fce8e8" stroke="#d4a5a5" stroke-width="0.6" transform="rotate(90)"/>
+              <ellipse rx="5" ry="9" fill="#fce8e8" stroke="#d4a5a5" stroke-width="0.6" transform="rotate(135)"/>
+              <circle r="4" fill="#c9a96e"/>
+            </g>
+            <g transform="translate(210,20)">
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(0)"/>
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(60)"/>
+              <ellipse rx="4" ry="7" fill="#f8e8e0" stroke="#d4a5a5" stroke-width="0.5" transform="rotate(120)"/>
+              <circle r="3" fill="#c9a96e"/>
+            </g>
+            <line x1="220" y1="20" x2="340" y2="20" stroke="#d4a5a5" stroke-width="0.6"/>
+          </svg>
+        </div>
+      </div>
+      <div class="story__body">
+        <p class="story__text">
+          Всё началось с одного взгляда — и мир вокруг стал немного теплее.
+          Мы шли по разным дорогам, пока судьба не свела нас вместе. С тех пор каждый день
+          наполнен смехом, нежностью и теми тихими минутами, которые дороже всего.
+        </p>
+        <p class="story__text">
+          Спустя годы, наполненных воспоминаниями и мечтами,
+          мы готовы сказать друг другу «да» — и хотим, чтобы вы были рядом
+          в этот самый важный день нашей жизни.
+        </p>
+        <p class="story__quote">"Любовь — это не смотреть друг на друга, а смотреть вместе в одном направлении."</p>
+        <p class="story__author">— Антуан де Сент-Экзюпери</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="section details fade-in" id="details">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Детали</h2>
+      </div>
+      <div class="details__grid">
+        <div class="details__card">
+          <div class="details__icon">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#c9a96e" stroke-width="1">
+              <rect x="5" y="8" width="30" height="28" rx="2"/>
+              <line x1="5" y1="16" x2="35" y2="16"/>
+              <line x1="13" y1="5" x2="13" y2="11"/>
+              <line x1="27" y1="5" x2="27" y2="11"/>
+              <text x="20" y="28" text-anchor="middle" font-size="10" font-family="Lato" fill="#c9a96e" stroke="none">14</text>
+            </svg>
+          </div>
+          <h3 class="details__card-title">Дата и время</h3>
+          <p class="details__card-text">14 июня 2025</p>
+          <p class="details__card-sub">Начало в 15:00</p>
+        </div>
+        <div class="details__card">
+          <div class="details__icon">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#c9a96e" stroke-width="1">
+              <path d="M20 5 C13 5 8 11 8 17 C8 25 20 37 20 37 C20 37 32 25 32 17 C32 11 27 5 20 5Z"/>
+              <circle cx="20" cy="17" r="4"/>
+            </svg>
+          </div>
+          <h3 class="details__card-title">Место</h3>
+          <p class="details__card-text">Усадьба «Белый сад»</p>
+          <p class="details__card-sub">г. Москва, Рублёвское шоссе, д. 15</p>
+        </div>
+        <div class="details__card">
+          <div class="details__icon">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#c9a96e" stroke-width="1">
+              <path d="M20 8 L24 16 L33 17 L27 23 L28 32 L20 28 L12 32 L13 23 L7 17 L16 16 Z"/>
+            </svg>
+          </div>
+          <h3 class="details__card-title">Дресс-код</h3>
+          <p class="details__card-text">Светлые, нежные тона</p>
+          <p class="details__card-sub">Пастельные и молочные оттенки. Белый — для невесты.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="section schedule fade-in" id="schedule">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Программа дня</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item fade-in">
+          <div class="timeline__time">15:00</div>
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Церемония</h3>
+            <p class="timeline__desc">Торжественная регистрация брака в окружении самых близких</p>
+          </div>
+        </div>
+        <div class="timeline__item fade-in">
+          <div class="timeline__time">16:30</div>
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Коктейльный час</h3>
+            <p class="timeline__desc">Живая музыка, канапе и первые фотографии на память</p>
+          </div>
+        </div>
+        <div class="timeline__item fade-in">
+          <div class="timeline__time">18:00</div>
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Банкет</h3>
+            <p class="timeline__desc">Праздничный ужин, тосты и тёплые слова для молодожёнов</p>
+          </div>
+        </div>
+        <div class="timeline__item fade-in">
+          <div class="timeline__time">20:00</div>
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Первый танец &amp; Вечеринка</h3>
+            <p class="timeline__desc">Танцы до рассвета — пусть эта ночь останется в сердце навсегда</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section gallery fade-in" id="gallery">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Галерея</h2>
+      </div>
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--tall">
+          <div class="gallery__placeholder gallery__placeholder--1">
+            <span class="gallery__text">фото скоро</span>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <div class="gallery__placeholder gallery__placeholder--2">
+            <span class="gallery__text">фото скоро</span>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <div class="gallery__placeholder gallery__placeholder--3">
+            <span class="gallery__text">фото скоро</span>
+          </div>
+        </div>
+        <div class="gallery__item gallery__item--wide">
+          <div class="gallery__placeholder gallery__placeholder--4">
+            <span class="gallery__text">фото скоро</span>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <div class="gallery__placeholder gallery__placeholder--5">
+            <span class="gallery__text">фото скоро</span>
+          </div>
+        </div>
+        <div class="gallery__item">
+          <div class="gallery__placeholder gallery__placeholder--6">
+            <span class="gallery__text">фото скоро</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__names">Александр &amp; Мария</div>
+      <div class="footer__heart" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#d4a5a5"/>
+        </svg>
+      </div>
+      <div class="footer__date">14 июня 2025</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
