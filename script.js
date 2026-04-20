@@ -246,3 +246,11 @@
     splash.classList.add('hide');
     startMusic();
   });
+
+  // Also start music on any interaction (scroll, tap, click) if not yet playing
+  function autoStart() {
+    if (!playing) startMusic();
+  }
+  document.addEventListener('touchstart', autoStart, { once: true, passive: true });
+  document.addEventListener('scroll',     autoStart, { once: true, passive: true });
+  document.addEventListener('keydown',    autoStart, { once: true });
