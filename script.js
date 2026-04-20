@@ -236,17 +236,14 @@
     if (playing) { stopMusic(); } else { startMusic(); }
   });
 
-  // Auto-start on first user interaction with the page
-  let autoStarted = false;
+  // Try to autoplay immediately (works if browser allows it)
+  startMusic();
+
+  // Fallback: start on first any interaction if autoplay was blocked
   function autoStart() {
-    if (!autoStarted) {
-      autoStarted = true;
-      startMusic();
-    }
-    document.removeEventListener('touchstart', autoStart);
-    document.removeEventListener('click', autoStart);
-    document.removeEventListener('keydown', autoStart);
+    if (!playing) startMusic();
   }
   document.addEventListener('touchstart', autoStart, { once: true });
+  document.addEventListener('scroll',     autoStart, { once: true, passive: true });
   document.addEventListener('click',      autoStart, { once: true });
   document.addEventListener('keydown',    autoStart, { once: true });
