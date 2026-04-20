@@ -190,3 +190,63 @@
   });
 
 })();
+
+  /* ------------------------------------------
+     BACKGROUND MUSIC
+  ------------------------------------------ */
+  const audio    = document.getElementById('bg-music');
+  const musicBtn = document.getElementById('music-btn');
+  const iconEl   = musicBtn.querySelector('.music-btn__icon');
+
+  let playing = false;
+
+  function startMusic() {
+    audio.volume = 0;
+    audio.play().then(() => {
+      playing = true;
+      musicBtn.classList.add('is-playing');
+      iconEl.textContent = '♫';
+      // fade in over 2s
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        vol = Math.min(vol + 0.05, 0.45);
+        audio.volume = vol;
+        if (vol >= 0.45) clearInterval(fadeIn);
+      }, 100);
+    }).catch(() => {});
+  }
+
+  function stopMusic() {
+    // fade out then pause
+    let vol = audio.volume;
+    const fadeOut = setInterval(() => {
+      vol = Math.max(vol - 0.05, 0);
+      audio.volume = vol;
+      if (vol <= 0) {
+        clearInterval(fadeOut);
+        audio.pause();
+        playing = false;
+        musicBtn.classList.remove('is-playing');
+        iconEl.textContent = '♪';
+      }
+    }, 80);
+  }
+
+  musicBtn.addEventListener('click', () => {
+    if (playing) { stopMusic(); } else { startMusic(); }
+  });
+
+  // Auto-start on first user interaction with the page
+  let autoStarted = false;
+  function autoStart() {
+    if (!autoStarted) {
+      autoStarted = true;
+      startMusic();
+    }
+    document.removeEventListener('touchstart', autoStart);
+    document.removeEventListener('click', autoStart);
+    document.removeEventListener('keydown', autoStart);
+  }
+  document.addEventListener('touchstart', autoStart, { once: true });
+  document.addEventListener('click',      autoStart, { once: true });
+  document.addEventListener('keydown',    autoStart, { once: true });

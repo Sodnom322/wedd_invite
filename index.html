@@ -11,6 +11,16 @@
 </head>
 <body>
 
+  <!-- MUSIC PLAYER -->
+  <!-- Replace src with your mp3 file path, e.g. music/song.mp3 -->
+  <audio id="bg-music" loop preload="none">
+    <source src="music/song.mp3" type="audio/mpeg" />
+  </audio>
+  <button class="music-btn" id="music-btn" aria-label="Включить музыку">
+    <span class="music-btn__icon music-btn__icon--play">♪</span>
+    <span class="music-btn__label">музыка</span>
+  </button>
+
   <!-- NAV -->
   <nav class="nav" id="nav">
     <ul class="nav__list">
@@ -27,8 +37,8 @@
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <p class="hero__pre">Приглашаем вас разделить с нами</p>
-      <h1 class="hero__names">Александр<span class="hero__amp">&amp;</span>Мария</h1>
-      <p class="hero__date">14 июня 2025</p>
+      <h1 class="hero__names">Дугар<span class="hero__amp">&amp;</span>Дарьяна</h1>
+      <p class="hero__date">15 июня 2026</p>
       <div class="hero__divider">
         <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg" class="divider-svg">
           <line x1="0" y1="10" x2="80" y2="10" stroke="#c9a96e" stroke-width="0.5"/>
@@ -275,13 +285,13 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__inner">
-      <div class="footer__names">Александр &amp; Мария</div>
+      <div class="footer__names">Дугар &amp; Дарьяна</div>
       <div class="footer__heart" aria-hidden="true">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#d4a5a5"/>
         </svg>
       </div>
-      <div class="footer__date">14 июня 2025</div>
+      <div class="footer__date">15 июня 2026</div>
     </div>
   </footer>
 
