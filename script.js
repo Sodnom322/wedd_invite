@@ -243,6 +243,7 @@
   const splashBtn = document.getElementById('splash-btn');
 
   splashBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     splash.classList.add('hide');
     startMusic();
   });
