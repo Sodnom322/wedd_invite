@@ -168,11 +168,9 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero__amp {
-  display: block;
-  font-size: 0.55em;
-  font-style: italic;
-  color: var(--gold-light);
-  margin: -0.1em 0;
+  color: #c9a96e;
+  font-style: normal;
+  margin: 0 0.2em;
 }
 
 .hero__date {
@@ -439,6 +437,35 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =============================================
+   NOTES
+   ============================================= */
+.notes {
+  background: var(--cream);
+}
+
+.notes h4 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.notes__hint {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto 0.5rem;
+}
+
+/* =============================================
    SCHEDULE / TIMELINE
    ============================================= */
 .schedule {
@@ -520,14 +547,27 @@ a { text-decoration: none; color: inherit; }
   background: var(--white);
 }
 
+.gallery__single {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery__single-img {
+  width: 100%;
+  max-width: 680px;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 10px 40px rgba(60,30,30,0.14);
+}
+
 .gallery__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 200px;
   gap: 12px;
 }
-
-.gallery__item { overflow: hidden; border-radius: 2px; }
 
 .gallery__item--tall { grid-row: span 2; }
 .gallery__item--wide { grid-column: span 2; }
