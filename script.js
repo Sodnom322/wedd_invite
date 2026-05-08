@@ -100,7 +100,7 @@
   /* ------------------------------------------
      COUNTDOWN TIMER
   ------------------------------------------ */
-  const WEDDING = new Date('2025-06-14T15:00:00');
+  const WEDDING = new Date('2026-06-16T15:00:00');
 
   function pad(n) { return String(n).padStart(2, '0'); }
 

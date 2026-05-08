@@ -200,6 +200,26 @@ a { text-decoration: none; color: inherit; }
   flex-wrap: wrap;
 }
 
+.countdown--light .countdown__num {
+  color: var(--text-dark);
+  text-shadow: none;
+}
+
+.countdown--light .countdown__label {
+  color: var(--text-mid);
+  opacity: 0.9;
+}
+
+.countdown--light .countdown__sep {
+  color: var(--gold);
+  opacity: 0.35;
+}
+
+.countdown--light + .countdown__past,
+.countdown--light .countdown__past {
+  color: var(--text-mid);
+}
+
 .countdown__item {
   display: flex;
   flex-direction: column;
