@@ -666,7 +666,7 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.72rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(155, 5, 5, 0.3);
 }
 
 /* =============================================
@@ -875,4 +875,17 @@ a { text-decoration: none; color: inherit; }
 @keyframes splash-btn-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,110,0); }
   50%       { box-shadow: 0 0 0 8px rgba(201,169,110,0.15); }
+}
+
+.gallery__header{
+  margin-bottom: 0px;
+}
+
+.data{
+   color: var(--text-light);
+   margin-bottom: 20px;
+}
+
+.title{
+    color: var(--text-light);
 }
